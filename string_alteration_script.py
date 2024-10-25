@@ -10,9 +10,14 @@ def main(input_file):
     with open(input_file, 'r') as inputFile:
         fileContent = inputFile.read()
 
+    # Modify fileContent below to change the file in python
     ########################################################
-    for i in range(len(fileContent)): 
-        print(fileContent[i])
+    curWord = ''
+    for i in range(len(fileContent)):
+        curWord += fileContent[i]
+        if fileContent[i+1] == ',': 
+            print(curWord)
+            curWord = ''
     
     
     # Print stuff to make sure things are running correctly
