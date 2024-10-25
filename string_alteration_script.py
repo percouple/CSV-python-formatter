@@ -3,28 +3,26 @@
 
 import imaplib
 import argparse
+import csv
 
 def main(input_file):
     
     # Open input file and read its contents 
-    with open(input_file, 'r') as inputFile:
-        fileContent = inputFile.read()
+    # Read a CSV file
+    with open(input_file, mode='r') as fileContent:
+        csv_reader = csv.reader(fileContent)
 
-    # Modify fileContent below to change the file in python
-    ########################################################
-    curWord = ''
-    for i in range(len(fileContent)):
-        curWord += fileContent[i]
-        if fileContent[i+1] == ',': 
-            print(curWord)
-            curWord = ''
-    
-    
-    # Print stuff to make sure things are running correctly
-    # print(fileContent)
-    # print("running - you're doing a right swell job my guy")
-    
-    #########################################################
+    # Modify fileContent below to manipulate the csv string
+    ########################################################################
+        # Here you can manipulate each row as needed
+        # For example, let's print each row
+        for row in csv_reader:
+            # print(row)
+
+            # Example manipulation: converting each item to uppercase
+            uppercased_row = [item.upper() for item in row]
+            print(uppercased_row)
+    ########################################################################
 
 # Main function call    
 if __name__ == "__main__":
