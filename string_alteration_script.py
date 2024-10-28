@@ -17,11 +17,11 @@ def main(input_file):
         # Here you can manipulate each row as needed
         # For example, let's print each row
         for row in csv_reader:
-            # print(row)
+            print(row)
+            # for col in range(4): 
+            #     # Example manipulation: converting each item to uppercase
 
-            # Example manipulation: converting each item to uppercase
-            uppercased_row = [item.upper() for item in row]
-            print(uppercased_row)
+            #     print(row[col])
     ########################################################################
 
 # Main function call    
